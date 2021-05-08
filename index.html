@@ -1,0 +1,1006 @@
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Domestic Material Consumption</title>
+
+	<!-- Leaflet css -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+	<!-- Leaflet sidebar css -->
+	<link rel="stylesheet" href="lib/sidebar-v2/css/leaflet-sidebar.css">
+	<!-- Basemaps and layer switcher control -->
+	<link rel="stylesheet" href="lib/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css">
+	<link rel="stylesheet" href="css/style.css" />
+	<!-- JQuery css -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- Font Awesome css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Leaflet js -->
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<!-- Leaflet js -->
+	<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+		integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+		crossorigin=""></script>
+	<!-- Leaflet sidebar js -->
+	<script src="lib/sidebar-v2/js/leaflet-sidebar.js"></script>
+	<!-- Basemaps and layer switcher control -->
+	<script src="lib/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+	<!-- Graphs -->
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+	<!-- GeoJSON -->
+	<script src="data/year.js"></script>
+</head>
+
+<body>
+	<main role="main" class="container-fluid">
+		<div id="sidebar" class="sidebar collapsed">
+			<!-- Nav tabs -->
+			<div class="sidebar-tabs">
+				<ul role="tablist">
+					<li style = "height: 32px; margin-top: 10px; margin-bottom: 20px;"><a href="#home" role="tab"><i class="fa fa-home" style ="width: 30px; height: 30px"></i></a></li>
+					<li style = "height: 32px; margin-bottom: 20px;"><a href="https://www.youtube.com/watch?v=KFkM-s6hBsM" role="tab"><i class="fa fa-video-camera" style ="width: 30px; height: 30px"></i></a></li>
+					<li style = "height: 32px; margin-bottom: 20px;"><a href="https://drive.google.com/open?id=1pqTjuWbrd8Ihflj4vDXOhdb-zY_4zbuG" role="tab"><i class="fa fa-file-pdf-o" style ="width: 30px; height: 30px"></i></a></li>
+					<li style = "height: 32px"><a href="https://github.com/dms-web-map/dms-web-map.github.io" role="tab" target="_blank"><i
+								class="fa fa-github"></i></a></li>
+				</ul>
+			</div>
+			<!-- Tab panes -->
+			<div class="sidebar-content">
+				<div class="sidebar-pane" id="home">
+					<h1 class="sidebar-header">
+						Description
+						<span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+					</h1>
+					<p style="margin-top: 5px; height: 150px">
+						Domestic Material Consumption (DMC) is a standard material flow accounting (MFA) indicator and
+						reports the apparent consumption of materials in a national economy. Per-capita DMC describes the
+						average level of material use in an economy – an environmental pressure indicator – and is also 
+						referred to as metabolic profile. This indicator is closely related to SDG 12: 
+						"Ensure Sustainable Consumption and Production Patterns" (Indicator 12.2.2: DMC per capita)
+						<a href="https://unstats.un.org/sdgs/metadata/files/Metadata-12-02-02.pdf">More Information</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="map">
+			</div><div id="btn1">
+				<button id="2001">2001</button>
+			</div>
+			<div id="btn2">
+				<button id="2002">2002</button>
+			</div>
+			<div id="btn3">
+				<button id="2003">2003</button>
+			</div>
+			<div id="btn4">
+				<button id="2004">2004</button>
+			</div>
+			<div id="btn5">
+				<button id="2005">2005</button>
+			</div>
+			<div id="btn6">
+				<button id="2006">2006</button>
+			</div>
+			<div id="btn7">
+				<button id="2007">2007</button>
+			</div>
+			<div id="btn8">
+				<button id="2008">2008</button>
+			</div>
+			<div id="btn9">
+				<button id="2009">2009</button>
+			</div>
+			<div id="btn10">
+				<button id="2010">2010</button>
+			</div>
+			<div id="btn11">
+				<button id="2011">2011</button>
+			</div>
+			<div id="btn12">
+				<button id="2012">2012</button>
+			</div>
+			<div id="btn13">
+				<button id="2013">2013</button>
+			</div>
+			<div id="btn14">
+				<button id="2014">2014</button>
+			</div>
+			<div id="btn15">
+				<button id="2015">2015</button>
+			</div>
+			<div id="btn16">
+				<button id="2016">2016</button>
+			</div>
+			<div id="btn17">
+				<button id="2017">2017</button>
+			</div>
+		</div>
+	</main>
+</body>
+
+<script type="text/javascript">
+	var readyState = function (e) {
+		(function () {
+			var basemaps = {
+				OpenStreetMap_DE: L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+					maxZoom: 18,
+				//	<!-- attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' -->
+				}),
+				DarkMatter: L.tileLayer('https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+					maxZoom: 19,
+				//	<!-- attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>', -->
+				}),
+				Wikimedia: L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png', {
+					minZoom: 1,
+					maxZoom: 19,
+				//	<!-- attribution: '&copy; <a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>', -->
+				}),
+			};
+			window.Basemaps = {
+				Basemaps: basemaps,
+			};
+		}());
+
+		// Layer and Basemaps switcher control
+		var map = L.map('map', {
+		maxZoom: 22, minZoom: 2,
+			center: [34, 60],
+			zoom: 2,
+			zoomControl: false,
+			//maxBounds: L.latLngBounds([89.9, -49.9],[-79.9,179.9]),
+			layers: [Basemaps.Basemaps.Wikimedia, Basemaps.Basemaps.DarkMatter, Basemaps.Basemaps.OpenStreetMap_DE],
+		});
+		
+		//add zoom control with your options
+		L.control.zoom({
+     	position:'topright'
+		}).addTo(map);
+
+		// Use the custom grouped layer control, not "L.control.layers"
+		L.control.groupedLayers(Basemaps.Basemaps).addTo(map);
+
+		var sidebar = L.control.sidebar('sidebar').addTo(map);
+
+		$(".button.open").click(function () {
+			$(".form").addClass("unvisible");
+			$(".form").removeClass("visible");
+			$(".button.close").removeClass("hide");
+			$(".button.open").addClass("hide");
+		});
+
+		$(".button.close").click(function () {
+			$(".form").addClass("visible");
+			$(".form").removeClass("unvisible");
+			$(".button.open").removeClass("hide");
+			$(".button.close").addClass("hide");
+		});
+
+		$("#sidebar").hover(function () {
+			map.dragging.disable();
+			map.touchZoom.disable();
+			map.doubleClickZoom.disable();
+			map.scrollWheelZoom.disable();
+			map.boxZoom.disable();
+			map.keyboard.disable();
+		},
+			function () {
+				map.dragging.enable();
+				map.touchZoom.enable();
+				map.doubleClickZoom.enable();
+				map.scrollWheelZoom.enable();
+				map.boxZoom.enable();
+				map.keyboard.enable();
+			});
+
+		function highlightFeature(e) {  //function to highlight country on mouse hover
+			var layer = e.target;
+
+			layer.setStyle({
+				weight: 1,
+				color: '#000000',
+				dashArray: '',
+				fillOpacity: 0.7
+			});
+
+			if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+				layer.bringToFront();
+			}
+
+			info.update(layer.feature.properties);
+		}
+
+		function resetHighlight(e) {       //function to reset highlight 
+			geojson.resetStyle(e.target);
+			info.update();
+		}
+
+		function zoomToFeature(e) {                //function to zoom to feature on click
+			map.fitBounds(e.target.getBounds());
+		}
+
+		function onEachFeature(feature, layer) {  //mouse hover and click functionality (pie chart of each country)
+			layer.on({
+				mouseover: highlightFeature,
+				mouseout: resetHighlight
+			});
+			layer.on('click', function (e) {
+				<!-- alert(e.target.feature.properties.NAME); //used to check click event -->
+				map.fitBounds(e.target.getBounds());
+
+			});
+		}
+
+		geojson = L.geoJson(countriesData, {    //adding country features from geoJson
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map);
+
+		// Button 2001
+		var customControl2001 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn1 = document.getElementById("2001");
+				btn1.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2001, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});;
+				btn1.style.backgroundColor = 'white';
+				btn1.style.backgroundSize = "60px 30px";
+				btn1.style.width = '60px';
+				btn1.style.height = '30px';
+				btn1.style.left = 59;
+				btn1.style.bottom = -10;
+				btn1.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn1;
+			}
+		});
+		map.addControl(new customControl2001());
+
+		// Button 2002
+		var customControl2002 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn2 = document.getElementById("2002");
+				btn2.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2002, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn2.style.backgroundColor = 'white';
+				btn2.style.backgroundSize = "60px 30px";
+				btn2.style.width = '60px';
+				btn2.style.height = '30px';
+				btn2.style.left = 124;
+				btn2.style.bottom = -50;
+				btn2.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn2;
+			}
+		});
+		map.addControl(new customControl2002());
+
+		// Button 2003
+		var customControl2003 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn3 = document.getElementById("2003");
+				btn3.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2003, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn3.style.backgroundColor = 'white';
+				btn3.style.backgroundSize = "60px 30px";
+				btn3.style.width = '60px';
+				btn3.style.height = '30px';
+				btn3.style.left = 189;
+				btn3.style.bottom = -90;
+				btn3.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn3;
+			}
+		});
+		map.addControl(new customControl2003());
+
+		// Button 2004
+		var customControl2004 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn4 = document.getElementById("2004");
+				btn4.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2004, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn4.style.backgroundColor = 'white';
+				btn4.style.backgroundSize = "60px 30px";
+				btn4.style.width = '60px';
+				btn4.style.height = '30px';
+				btn4.style.left = 254;
+				btn4.style.bottom = -130;
+				btn4.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn4;
+			}
+		});
+		map.addControl(new customControl2004());
+
+		// Button 2005
+		var customControl2005 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn5 = document.getElementById("2005");
+				btn5.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2005, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn5.style.backgroundColor = 'white';
+				btn5.style.backgroundSize = "60px 30px";
+				btn5.style.width = '60px';
+				btn5.style.height = '30px';
+				btn5.style.left = 319;
+				btn5.style.bottom = -170;
+				btn5.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn5;
+			}
+		});
+		map.addControl(new customControl2005());
+
+		// Button 2006
+		var customControl2006 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn6 = document.getElementById("2006");
+				btn6.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2006, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn6.style.backgroundColor = 'white';
+				btn6.style.backgroundSize = "60px 30px";
+				btn6.style.width = '60px';
+				btn6.style.height = '30px';
+				btn6.style.left = 384;
+				btn6.style.bottom = -210;
+				btn6.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn6;
+			}
+		});
+		map.addControl(new customControl2006());
+
+		// Button 2007
+		var customControl2007 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn7 = document.getElementById("2007");
+				btn7.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2007, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn7.style.backgroundColor = 'white';
+				btn7.style.backgroundSize = "60px 30px";
+				btn7.style.width = '60px';
+				btn7.style.height = '30px';
+				btn7.style.left = 449;
+				btn7.style.bottom = -250;
+				btn7.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn7;
+			}
+		});
+		map.addControl(new customControl2007());
+
+		// Button 2008
+		var customControl2008 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn8 = document.getElementById("2008");
+				btn8.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2008, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn8.style.backgroundColor = 'white';
+				btn8.style.backgroundSize = "60px 30px";
+				btn8.style.width = '60px';
+				btn8.style.height = '30px';
+				btn8.style.left = 514;
+				btn8.style.bottom = -290;
+				btn8.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn8;
+			}
+		});
+		map.addControl(new customControl2008());
+
+		// Button 2009
+		var customControl2009 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn9 = document.getElementById("2009");
+				btn9.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2009, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn9.style.backgroundColor = 'white';
+				btn9.style.backgroundSize = "60px 30px";
+				btn9.style.width = '60px';
+				btn9.style.height = '30px';
+				btn9.style.left = 579;
+				btn9.style.bottom = -330;
+				btn9.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn9;
+			}
+		});
+		map.addControl(new customControl2009());
+
+		// Button 2010
+		var customControl2010 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn10 = document.getElementById("2010");
+				btn10.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2010, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn10.style.backgroundColor = 'white';
+				btn10.style.backgroundSize = "60px 30px";
+				btn10.style.width = '60px';
+				btn10.style.height = '30px';
+				btn10.style.left = 644;
+				btn10.style.bottom = -370;
+				btn10.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn10;
+			}
+		});
+		map.addControl(new customControl2010());
+
+		// Button 2011
+		var customControl2011 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn11 = document.getElementById("2011");
+				btn11.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2011, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn11.style.backgroundColor = 'white';
+				btn11.style.backgroundSize = "60px 30px";
+				btn11.style.width = '60px';
+				btn11.style.height = '30px';
+				btn11.style.left = 709;
+				btn11.style.bottom = -410;
+				btn11.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn11;
+			}
+		});
+		map.addControl(new customControl2011());
+
+		// Button 2012
+		var customControl2012 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn12 = document.getElementById("2012");
+				btn12.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2012, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn12.style.backgroundColor = 'white';
+				btn12.style.backgroundSize = "60px 30px";
+				btn12.style.width = '60px';
+				btn12.style.height = '30px';
+				btn12.style.left = 774;
+				btn12.style.bottom = -450;
+				btn12.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn12;
+			}
+		});
+		map.addControl(new customControl2012());
+
+		// Button 2013
+		var customControl2013 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn13 = document.getElementById("2013");
+				btn13.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2013, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn13.style.backgroundColor = 'white';
+				btn13.style.backgroundSize = "60px 30px";
+				btn13.style.width = '60px';
+				btn13.style.height = '30px';
+				btn13.style.left = 839;
+				btn13.style.bottom = -490;
+				btn13.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn13;
+			}
+		});
+		map.addControl(new customControl2013());
+
+		// Button 2014
+		var customControl2014 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn14 = document.getElementById("2014");
+				btn14.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2014, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn14.style.backgroundColor = 'white';
+				btn14.style.backgroundSize = "60px 30px";
+				btn14.style.width = '60px';
+				btn14.style.height = '30px';
+				btn14.style.left = 904;
+				btn14.style.bottom = -530;
+				btn14.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn14;
+			}
+		});
+		map.addControl(new customControl2014());
+
+		// Button 2015
+		var customControl2015 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn15 = document.getElementById("2015");
+				btn15.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2015, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn15.style.backgroundColor = 'white';
+				btn15.style.backgroundSize = "60px 30px";
+				btn15.style.width = '60px';
+				btn15.style.height = '30px';
+				btn15.style.left = 969;
+				btn15.style.bottom = -570;
+				btn15.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn15;
+			}
+		});
+		map.addControl(new customControl2015());
+
+		// Button 2016
+		var customControl2016 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn16 = document.getElementById("2016");
+				btn16.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2016, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn16.style.backgroundColor = 'white';
+				btn16.style.backgroundSize = "60px 30px";
+				btn16.style.width = '60px';
+				btn16.style.height = '30px';
+				btn16.style.left = 1034;
+				btn16.style.bottom = -610;
+				btn16.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn16;
+			}
+		});
+		map.addControl(new customControl2016());
+
+		// Button 2017
+		var customControl2017 = L.Control.extend({
+			options: {
+				position: 'bottomleft'
+			},
+			onAdd: function (map) {
+				var btn17 = document.getElementById("2017");
+				btn17.addEventListener("click", function () { currentStyle=this.id;
+					map.removeLayer(geojson);
+					geojson = L.geoJson(countriesData, { style: style_2017, //adding country features from geoJson,
+					onEachFeature: onEachFeature });
+					map.addLayer(geojson);
+				});
+				btn17.style.backgroundColor = 'white';
+				btn17.style.backgroundSize = "60px 30px";
+				btn17.style.width = '60px';
+				btn17.style.height = '30px';
+				btn17.style.height = '30px';
+				btn17.style.left = 1099;
+				btn17.style.bottom = -650;
+				btn17.onclick = function () {
+					console.log('buttonClicked');
+				}
+				return btn17;
+			}
+		});
+		map.addControl(new customControl2017());
+
+		<!-- L.control.scale({ position: 'bottomright' }).addTo(map); //addition of scale -->
+
+		var info = L.control(); // control and functions to show country info on hover
+
+			var currentStyle = "2001";
+	var yearToDiff = {
+		"2001":'0100',
+		"2002":'0201',
+		"2003":'0302',
+		"2004":'0403',
+		"2005":'0504',
+		"2006":'0605',
+		"2007":'0706',
+		"2008":'0807',
+		"2009":'0908',
+		"2010":'1009',
+		"2011":'1110',
+		"2012":'1211',
+		"2013":'1312',
+		"2014":'1413',
+		"2015":'1514',
+		"2016":'1615',
+		"2017":'1716'
+	};
+	
+		info.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info');
+			this.update();
+			return this._div;
+		};
+
+		<!-- info.update = function (props) { -->
+			<!-- this._div.innerHTML = '<h4>Domestic material consumption</h4>' + '<h4>per capita 2000</h4>' + (props ? -->
+				<!-- '<b>' + props.NAME_LONG + '</b><br />' + props.Year_dif0100 + ' tonnes' -->
+				<!-- : 'data not available'); -->
+		<!-- };
+		
+		info.update = function (props) { 
+			<!-- if (props["Year_dif"+yearToDiff[currentStyle]] == undefined ) { -->
+				<!-- this._div.innerHTML = 'no data'; -->
+				<!-- } else { -->
+			this._div.innerHTML = '<h4>Domestic Material Consumption (per capita)</h4>' + '<h4>difference of year ' + currentStyle + ' and ' + (currentStyle-1) + '</h4><br>' + (props ?
+				'<b>' + props.NAME_LONG + '</b><br>' + props["Year_dif"+yearToDiff[currentStyle]] + ' tonnes'
+				: 'data not available');
+		<!-- } -->
+		};
+
+		info.addTo(map);
+
+		// get color depending on disaster density value
+		function getColor(d) {
+			return d == undefined ? '#A9A9A9':
+			d >= 5 ? '#1a9850' :
+				d >= 1 ? '#91cf60' :
+					d >= 0 ? '#d9ef8b' :
+						d >= -1 ? '#fee08b' :
+							d >= -5 ? '#fc8d59' :
+								d >= -80 ? '#b2182b' :
+									'#A9A9A9';
+		}
+
+		function style(feature) {    //country border lines and fill color setting
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0100)
+			};
+		}
+
+		function style_2001(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0100)
+			};
+		}
+
+		function style_2002(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0201)
+			};
+		}
+
+		function style_2003(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0302)
+			};
+		}
+
+		function style_2004(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0403)
+			};
+		}
+
+		function style_2005(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0504)
+			};
+		}
+
+		function style_2006(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0605)
+			};
+		}
+
+		function style_2007(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0706)
+			};
+		}
+
+		function style_2008(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0807)
+			};
+		}
+
+		function style_2009(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif0908)
+			};
+		}
+
+		function style_2010(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif1009)
+			};
+		}
+
+		function style_2011(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif1110)
+			};
+		}
+
+		function style_2012(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif1211)
+			};
+		}
+
+		function style_2013(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif1312)
+			};
+		}
+
+		function style_2014(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif1413)
+			};
+		}
+
+		function style_2015(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif1514)
+			};
+		}
+
+		function style_2016(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif1615)
+			};
+		}
+
+		function style_2017(feature) {
+			return {
+				weight: 1,
+				opacity: 1,
+				color: 'grey',
+				dashArray: '1',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.Year_dif1716)
+			};
+		}
+
+		var legend = L.control({ position: 'bottomleft' }); //function and display of legend
+
+		legend.onAdd = function (map) {
+			var div = L.DomUtil.create('div', 'info legend'),
+			grades = [-80, -5, -1, 0, 1, 5,80],
+			labels = [['<strong> Tonnes </strong>']],
+			from, to;
+
+		for (var i = 0; i < grades.length - 1; i++) {
+			from = grades[i];
+			to = grades[i + 1];
+
+			labels.push(
+				'<i style="background:' + getColor(from) + '"></i> ' +
+				from + (to ? ' &ndash;  ' + to : '- 0'));
+		}
+
+			div.innerHTML = labels.join('<br>');
+			return div;
+		//<!-- 
+		
+		//	<!-- var div = L.DomUtil.create('div', 'graphDiv'); -->
+		//	<!-- div.innerHTML = 'ouefiaogsoroig'; -->
+		//	<!-- return div; -->
+		};
+
+		legend.addTo(map);
+		
+		var chartdiv = L.control({ position: 'bottomright' }); //function and display of legend
+
+		chartdiv.onAdd = function (map) {
+			var frame = L.DomUtil.create('iframe', 'info graphs');
+			frame.setAttribute("name", "graphframe");
+			frame.setAttribute("src","data/Person_Chart.html");
+			
+			return frame;
+
+		};
+		chartdiv.innerHTML = chartdiv.innerHTML + '<p>blah blah</p>';
+		chartdiv.addTo(map);
+}
+	window.addEventListener('DOMContentLoaded', readyState);
+</script>
+
+</html>

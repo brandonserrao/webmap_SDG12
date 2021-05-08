@@ -1,0 +1,269 @@
+<div id"="navbar">
+<p><a href="Person_Chart.html" target="graphframe">Domestic Consumption Total (2000-2017)</a></p>
+<p><a href="Line_Chart.html" target="graphframe">Domestic Consumption by Continent (2000-2017)</a></p>
+<p><a href="" target=""></a></p>
+</div>
+<style>
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+#chartdiv {
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<script>
+
+var chart = AmCharts.makeChart("chartdiv", {
+  "type": "serial",
+  "theme": "light",
+  "dataProvider": [
+{
+    "year": "2000",
+    "Africa": 12.3,
+	"Asia": 20.2,
+	"Europe": 39.9,
+	"North America": 87.4,
+	"Oceania": 90.7,
+	"South America": 27.4,
+	"World": 25.5
+  },
+  {
+    "year": "2001",
+    "Africa": 12.4,
+	"Asia": 20.4,
+	"Europe": 40.3,
+	"North America": 85.1,
+	"Oceania": 91.8,
+	"South America": 26.8,
+	"World": 25.6
+  },
+  {
+    "year": "2002",
+    "Africa": 12.5,
+	"Asia": 21.1,
+	"Europe": 41.7,
+	"North America": 82.6,
+	"Oceania": 87.6,
+	"South America": 26.5,
+	"World": 25.9
+  },
+  {
+    "year": "2003",
+    "Africa": 12.8,
+	"Asia": 22.4,
+	"Europe": 42.0,
+	"North America": 81.7,
+	"Oceania": 91.5,
+	"South America": 26.6,
+	"World": 26.8
+  },
+  {
+    "year": "2004",
+    "Africa": 12.7,
+	"Asia": 23.7,
+	"Europe": 43.3,
+	"North America": 85.9,
+	"Oceania": 89.1,
+	"South America": 27.9,
+	"World": 28.0
+  },
+  {
+    "year": "2005",
+    "Africa": 13.1,
+	"Asia": 24.8,
+	"Europe": 43.8,
+	"North America": 87.6,
+	"Oceania": 90.3,
+	"South America": 28.7,
+	"World": 28.8
+  },
+  {
+    "year": "2006",
+    "Africa": 13.6,
+	"Asia": 26.3,
+	"Europe": 45.0,
+	"North America": 85.5,
+	"Oceania": 86.5,
+	"South America": 29.5,
+	"World": 29.8
+  },
+  {
+    "year": "2007",
+    "Africa": 13.6,
+	"Asia": 28.1,
+	"Europe": 45.6,
+	"North America": 80.2,
+	"Oceania": 89.0,
+	"South America": 31.5,
+	"World": 30.8
+  },
+  {
+    "year": "2008",
+    "Africa": 15.7,
+	"Asia": 28.8,
+	"Europe": 45.3,
+	"North America": 75.3,
+	"Oceania": 85.9,
+	"South America": 32.2,
+	"World": 31.2
+  },
+  {
+    "year": "2009",
+    "Africa": 15.0,
+	"Asia": 30.5,
+	"Europe": 39.9,
+	"North America": 65.7,
+	"Oceania": 86.0,
+	"South America": 32.0,
+	"World": 30.9
+  },
+  {
+    "year": "2010",
+    "Africa": 15.3,
+	"Asia": 32.6,
+	"Europe": 39.9,
+	"North America": 67.4,
+	"Oceania": 85.1,
+	"South America": 33.2,
+	"World": 32.3
+  },
+  {
+    "year": "2011",
+    "Africa": 14.1,
+	"Asia": 34.7,
+	"Europe": 41.6,
+	"North America": 66.4,
+	"Oceania": 83.0,
+	"South America": 34.5,
+	"World": 33.5
+  },
+    {
+    "year": "2012",
+    "Africa": 14.2,
+	"Asia": 35.0,
+	"Europe": 38.9,
+	"North America": 60.3,
+	"Oceania": 79.7,
+	"South America": 34.0,
+	"World": 33.0
+  },
+  {
+    "year": "2013",
+    "Africa": 14.6,
+	"Asia": 35.8,
+	"Europe": 38.9,
+	"North America": 62.2,
+	"Oceania": 79.9,
+	"South America": 33.9,
+	"World": 33.6
+  },
+  {
+    "year": "2014",
+    "Africa": 15.1,
+	"Asia": 36.2,
+	"Europe": 39.4,
+	"North America": 62.1,
+	"Oceania": 77.0,
+	"South America": 34.4,
+	"World": 34.0
+  },
+  {
+    "year": "2015",
+    "Africa": 13.8,
+	"Asia": 37.0,
+	"Europe": 39.5,
+	"North America": 60.4,
+	"Oceania": 76.7,
+	"South America": 35.0,
+	"World": 34.1
+  },
+  {
+    "year": "2016",
+    "Africa": 14.0,
+	"Asia": 37.9,
+	"Europe": 39.4,
+	"North America": 58.7,
+	"Oceania": 76.0,
+	"South America": 35.8,
+	"World": 34.5
+  },
+  {
+    "year": "2017",
+    "Africa": 14.1,
+	"Asia": 38.9,
+	"Europe": 39.4,
+	"North America": 57.1,
+	"Oceania": 75.3,
+	"South America": 34.9,
+	"World": 35.0
+  }
+  ],
+  "valueAxes": [{
+    "gridColor": "#FFFFFF",
+    "gridAlpha": 0.2,
+    "dashLength": 0
+  }],
+  "gridAboveGraphs": true,
+  "startDuration": 1,
+  "graphs": [{
+    "title": "Africa",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 3,
+    "valueField": "Africa"
+  }, {
+    "title": "Asia",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 3,
+    "valueField": "Asia"
+  },{
+    "title": "Europe",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 3,
+    "valueField": "Europe"
+  },{
+    "title": "North America",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 3,
+    "valueField": "North America"
+  },{
+    "title": "Oceania",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 3,
+    "valueField": "Oceania"
+  },{
+    "title": "South America",
+    "balloonText": "[[title]]: <b>[[value]]</b>",
+    "bullet": "round",
+    "bulletSize": 3,
+    "valueField": "South America"
+  }],
+  "chartCursor": {
+    "categoryBalloonEnabled": false,
+    "cursorAlpha": 0,
+    "zoomable": false
+  },
+  "categoryField": "year",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "gridAlpha": 0.1
+  },
+  "legend": {}
+});
+
+</script>
+
+<div id="chartdiv"></div>
